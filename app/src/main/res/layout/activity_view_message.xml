@@ -11,7 +11,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/messageTxt"
         android:textSize="20sp"
         android:text="전달받은 메세지 출력 자리" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberTxt"
+        android:textSize="20sp"
+        android:text="전달 받은 숫자 표현 자리" />
+
 
 </LinearLayout>
