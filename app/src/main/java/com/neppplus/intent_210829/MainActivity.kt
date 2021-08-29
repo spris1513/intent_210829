@@ -19,6 +19,9 @@ class MainActivity : AppCompatActivity() {
 
 //            메세지 조회 화면으로 (입력한 내용을 들고) 이동.
             val myIntent3 = Intent(this,ViewMessageActivity::class.java)
+
+            myIntent3.putExtra("inputMessage", inputContent)
+
             startActivity(myIntent3)
 
         }
