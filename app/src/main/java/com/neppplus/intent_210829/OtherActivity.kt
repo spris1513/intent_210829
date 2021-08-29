@@ -11,12 +11,16 @@ class OtherActivity : AppCompatActivity() {
         setContentView(R.layout.activity_other)
 
 //        복귀 버튼이 눌리면 메인화면으로 이동
-        
+
         retrunToMainBtn.setOnClickListener {
-            
+
 //              Intent를 이용, 메인으로 이동
-            val myIntent2 = Intent(this,MainActivity::class.java)
-            startActivity(myIntent2)
+//            val myIntent2 = Intent(this, MainActivity::class.java)
+//            startActivity(myIntent2)
+
+//            지금 보고있는 다른화면을 종료처리
+            finish()
+
 
         }
     }
