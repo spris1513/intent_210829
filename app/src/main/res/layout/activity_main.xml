@@ -90,5 +90,18 @@
         android:layout_height="wrap_content"
         android:text="문자보내기(SENDTO)"/>
 
+    <Button
+        android:id="@+id/naverLinkBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="네이버 웹 링크(VIEW)"/>
+
+    <Button
+        android:id="@+id/netflixBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="넷플다운로드링크(VIEW)"/>
+
+
 
 </LinearLayout>

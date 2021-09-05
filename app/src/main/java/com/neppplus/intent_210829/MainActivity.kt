@@ -53,6 +53,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(myIntent)
         }
 
+        naverLinkBtn.setOnClickListener {
+            val myUri = Uri.parse("https://naver.com")
+            val myIntent = Intent(Intent.ACTION_VIEW,myUri)
+            startActivity(myIntent)
+        }
+
+        netflixBtn.setOnClickListener {
+            val myUri = Uri.parse("market://details?id=com.netflix.mediaclient")
+            val myIntent = Intent(Intent.ACTION_VIEW,myUri)
+            startActivity(myIntent)
+        }
+
 
 
 
