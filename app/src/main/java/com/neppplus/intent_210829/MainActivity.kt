@@ -2,6 +2,7 @@ package com.neppplus.intent_210829
 
 import android.content.Intent
 import android.content.res.Configuration
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -15,6 +16,47 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        전화걸기(DIAL) Intent 활용 예시
+
+        dialBtn.setOnClickListener {
+
+//            전화번호를 받아오자.
+            val inputPhoneNum  = phoneNumEdt.text.toString()
+
+//            어디에 전화를 걸지 알려주는 정보(Uri)로 가공
+            val myUri = Uri.parse("tel:${inputPhoneNum}")  // tel:입력한 번호 형태로 가공.
+
+//            전화 화면으로 이동 + 어디에 걸지 (Uri) 조합 > Intent
+            val myIntent = Intent ( Intent.ACTION_DIAL, myUri )
+            startActivity(myIntent)
+        }
+
+        callBtn.setOnClickListener {
+
+//            문법상 틀린게 없어도 앱이 죽는다.
+
+            val inputPhonNum = phoneNumEdt.text.toString()
+            val myUri = Uri.parse("tel${inputPhonNum}")
+            val myIntent = Intent(Intent.ACTION_CALL,myUri)
+            startActivity(myIntent)
+        }
+
+        smsBtn.setOnClickListener {
+            val inputPhonNum = phoneNumEdt.text.toString()
+            val myUri = Uri.parse("smsto:${inputPhonNum}")
+            val myIntent = Intent(Intent.ACTION_SENDTO,myUri)
+            startActivity(myIntent)
+
+//            미리 보여줄 내용 적어두기
+            myIntent.putExtra("sms_body","미리 적어줄 내용")
+            startActivity(myIntent)
+        }
+
+
+
+
+
 
         editNicknameBtn.setOnClickListener {
 
